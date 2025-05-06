@@ -918,3 +918,86 @@ background: #555; /* Slightly different background to indicate interaction */
 outline: none; /* Remove default focus outline */
 box-shadow: 0 0 0 2px rgba(51, 51, 51, 0.3); /* Add subtle focus indication */
 }
+
+.about-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+    border: 1px solid #ddd;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h1 {
+    margin-top: 0;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .about-header {
+        flex-direction: column;
+    }
+    
+    .profile-image {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100px;
+    }
+}
+
+/* Discography Table Styles */
+.discography-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.discography-table thead th {
+    background-color: #f5f5f5;
+    padding: 8px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.discography-table tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+.discography-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.discography-table td {
+    padding: 12px 8px;
+    vertical-align: middle;
+}
+
+.discography-table .cover {
+    width: 60px;
+}
+
+.discography-table .cover img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.discography-table .title {
+    font-weight: bold;
+}
+
+
+
+
+.discography-table .year {
+    font-size: 0.9em;
+}
