@@ -1,0 +1,819 @@
+
+header,
+section,
+article,
+main,
+nav,
+aside,
+footer {
+    display: block;
+}
+
+/* general styles */
+html {
+    width: 100%;
+    height: 100%;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    /* IE trick */
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: #fafaf8;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font: 0.7em/1.3em Verdana, Helvetica, sans-serif;
+}
+
+/* body#projects, body#experiments { background: #fafaf8 url(/images/layout/bg-mono.png) no-repeat top left; } */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 0.5em 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+
+blockquote {
+    margin: 0.2em;
+    padding: 0 0.2em 0.2em 20px;
+    background: url(../images/icons/quote.png) no-repeat top left;
+}
+
+code {
+    font-size: 1.2em;
+    display: block;
+    overflow: auto;
+}
+
+p code,
+code.inline {
+    display: inline;
+}
+
+.announcement {
+    background: #fa0000;
+    color: #fff;
+    padding: 0.5em;
+}
+
+a,
+a:link {
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+a:visited {
+    color: #666;
+}
+
+a:focus,
+a:hover,
+a:active {
+    color: #fff;
+    background-color: #666;
+}
+
+a.license:hover {
+    background-color: transparent;
+}
+
+a.badge:hover {
+    background-color: transparent;
+    transform: rotate(15deg);
+}
+
+a img {
+    border: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2em 0;
+}
+
+#content ul {
+    list-style: disc;
+    padding: 1em;
+    margin: 1em;
+}
+
+#content ul li {
+    margin: 0 0 1em 0;
+}
+
+/* general page elements */
+#container {
+    /* background: url(/images/layout/bg.png) no-repeat top left; */
+    width: 780px;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#siteframework {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 260px;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#logo,
+#logo:link,
+#logo:visited,
+#logo:focus,
+#logo:hover,
+#logo:active {
+    display: block;
+    margin: 0;
+    padding: 0 20px 15px 0;
+    background: url(../images/layout/10.png) no-repeat bottom left;
+    line-height: 1px;
+}
+
+#logo img {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background: url(../images/layout/20.png) no-repeat top left;
+    padding: 5px 20px 0 20px;
+    margin: 60px 0 0 0;
+}
+
+nav dl {
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+nav dt {
+    font-weight: bold;
+}
+
+nav dd {
+    margin: 0 0 2px 0;
+}
+
+nav a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+}
+
+#badges {
+    margin: 0;
+    padding: 15px 20px 0 0;
+    background: url(../images/layout/40.png) no-repeat top left;
+}
+
+#badges li {
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+
+#badges li a {
+    display: inline-block;
+    padding: 0.1em 0;
+}
+
+#badges li a img {
+    vertical-align: middle;
+}
+
+#badge_wasp {
+    display: block;
+    width: 100px;
+    height: 15px;
+    float: right;
+    padding: 0 0 3px 0;
+    background: url(./images/badges/webstandards.org-mono.png) no-repeat top right;
+    margin: 0 0 2px 0;
+}
+
+#badge_wasp img {
+    margin: 0;
+    padding: 0;
+    visibility: visible;
+}
+
+#badge_wasp:link img,
+#badge_wasp:visited img {
+    visibility: hidden;
+}
+
+#badge_wasp:focus,
+#badge_wasp:hover,
+#badge_wasp:active {
+    background: url(./images/badges/webstandards.org.png) no-repeat top right;
+}
+
+#badge_wasp:focus img,
+#badge_wasp:hover img,
+#badge_wasp:active img {
+    visibility: visible;
+}
+
+#badge_britpack {
+    display: block;
+    width: 100px;
+    height: 30px;
+    float: right;
+    padding: 0;
+    background: url(./images/badges/britpack-mono.png) no-repeat top left;
+    margin: 0 0 4px 0;
+}
+
+#badge_britpack img {
+    margin: 0;
+    padding: 0;
+    visibility: visible;
+}
+
+#badge_britpack:link img,
+#badge_britpack:visited img {
+    visibility: hidden;
+}
+
+#badge_britpack:focus,
+#badge_britpack:hover,
+#badge_britpack:active {
+    background: url(./images/badges/britpack.png) no-repeat top left;
+}
+
+#badge_britpack:focus img,
+#badge_britpack:hover img,
+#badge_britpack:active img {
+    visibility: visible;
+}
+
+#badge_web_accessibility_book {
+    display: block;
+    width: 100px;
+    height: 122px;
+    float: right;
+    padding: 0;
+    background: url(./images/badges/web_accessibility_book-mono.png) no-repeat top left;
+    margin: 0 0 4px 0;
+}
+
+#badge_web_accessibility_book img {
+    margin: 0;
+    padding: 0;
+    visibility: visible;
+}
+
+#badge_web_accessibility_book:link img,
+#badge_web_accessibility_book:visited img {
+    visibility: hidden;
+}
+
+#badge_web_accessibility_book:focus,
+#badge_web_accessibility_book:hover,
+#badge_web_accessibility_book:active {
+    background: url(./images/badges/web_accessibility_book.png) no-repeat top left;
+}
+
+#badge_web_accessibility_book:focus img,
+#badge_web_accessibility_book:hover img,
+#badge_web_accessibility_book:active img {
+    visibility: visible;
+}
+
+#badge_sxsw {
+    display: block;
+    width: 100px;
+    height: 100px;
+    float: right;
+    padding: 0;
+    background: url(./images/badges/sxsw2007-mono.png) no-repeat top left;
+    margin: 0 0 4px 0;
+}
+
+#badge_sxsw img {
+    margin: 0;
+    padding: 0;
+    visibility: visible;
+}
+
+#badge_sxsw:link img,
+#badge_sxsw:visited img {
+    visibility: hidden;
+}
+
+#badge_sxsw:focus,
+#badge_sxsw:hover,
+#badge_sxsw:active {
+    background: url(./images/badges/sxsw2007.png) no-repeat top left;
+}
+
+#badge_sxsw:focus img,
+#badge_sxsw:hover img,
+#badge_sxsw:active img {
+    visibility: visible;
+}
+
+#badge_nsdesign {
+    display: block;
+    width: 100px;
+    height: 30px;
+    float: right;
+    padding: 0;
+    background: url(./images/badges/nsdesign-mono.png) no-repeat top left;
+    margin: 0 0 4px 0;
+}
+
+#badge_nsdesign img {
+    margin: 0;
+    padding: 0;
+    visibility: visible;
+}
+
+#badge_nsdesign:link img,
+#badge_nsdesign:visited img {
+    visibility: hidden;
+}
+
+#badge_nsdesign:focus,
+#badge_nsdesign:hover,
+#badge_nsdesign:active {
+    background: url(./images/badges/nsdesign.png) no-repeat top left;
+}
+
+#badge_nsdesign:focus img,
+#badge_nsdesign:hover img,
+#badge_nsdesign:active img {
+    visibility: visible;
+}
+
+#content {
+    position: absolute;
+    top: 110px;
+    left: 280px;
+    width: 500px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+#content li {
+    margin: 0;
+    padding: 0.2em 0 0 0;
+}
+
+#content img {
+    border: 1px #000 solid;
+}
+
+footer {
+    margin: 3em 0 0 0;
+    font-size: 85%;
+    color: #666;
+    clear: both;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer dl {
+    color: #333;
+    font-size: 85%;
+    margin: 0;
+    padding: 0;
+}
+
+footer dt,
+footer dd {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+footer dt {
+    margin-right: 0.25em;
+}
+
+/* now some navigation highlighting styles */
+body#home nav a#navhome,
+body#news nav a#navnews,
+body#projects nav a#navprojects,
+body#experiments nav a#navexperiments,
+body#about nav a#navabout,
+body#feeds nav a#navfeeds,
+body#bookmarks nav a#navbookmarks,
+body#externals nav a#navexternals,
+body#delicious nav a#navdelicious {
+    background: #000;
+    color: #fff;
+}
+
+/* and some very specific styles, but they're used in more than one place... */
+/* using the longhand way for the background, so as not to override any previous background colour definitions */
+.view {
+    padding-left: 13px;
+    background-image: url(../images/icons/arrow.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.view:focus,
+.view:hover,
+.view:active {
+    background-image: url(../images/icons/arrow_on.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.back {
+    padding-left: 13px;
+    background-image: url(../images/icons/back.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.back:focus,
+.back:hover,
+.back:active {
+    background-image: url(../images/icons/back_on.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.category {
+    padding-left: 20px;
+    background-image: url(../images/icons/folder.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.view,
+.view a,
+.category,
+.category a,
+.back,
+.back a {
+    text-decoration: none;
+}
+
+a.external {
+    padding-left: 13px;
+    background-image: url(../images/icons/external.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+.testimonial {
+    background: url(../images/icons/quote.png) no-repeat top left;
+    padding: 0 0 0 17px;
+    margin: 1em 0;
+}
+
+.testimonial blockquote {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+.testimonial p {
+    margin: 0.2em;
+    padding: 0;
+}
+
+.testimonial p.cite {
+    color: #888;
+    font-size: 0.8em;
+    text-align: right;
+}
+
+.testimonial cite {
+    font-style: normal;
+}
+
+#pager #prev {
+    margin-left: 0.5em;
+    padding: 0 0 0 10px;
+    background-image: url(../images/icons/prev.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+#pager #next {
+    margin-left: 0.5em;
+    padding: 0 10px 0 0;
+    background-image: url(../images/icons/next.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+table.list {
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+table.list td.item {
+    padding: 1px 0.5em 0 20px;
+    background: url(../images/icons/music.png) no-repeat center left;
+    border-bottom: 1px #f5f5f5 solid;
+    margin: 0;
+}
+
+table.list tr a {
+    display: block;
+    text-decoration: none;
+}
+
+table.list tr a:visited {
+    color: #000;
+    background: #eee;
+}
+
+table.list thead tr {
+    position: absolute;
+    top: 1em;
+    left: -999em;
+}
+
+table.list td,
+table.list tr {
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse;
+    border-bottom: 1px #f5f5f5 solid;
+    vertical-align: top;
+}
+
+table.list td.date {
+    width: 6em;
+    color: #777;
+}
+
+/* page-specific styles */
+body#experiments #content img {
+    float: left;
+}
+
+body#experiments #details {
+    margin-left: 170px;
+}
+
+body#experiments #details dt {
+    font-weight: bold;
+}
+
+body#experiments #detail_data dt {
+    float: left;
+    width: 8em;
+}
+
+body#experiments a#experimentlink {
+    display: block;
+    margin-top: 2em;
+    font-weight: bold;
+}
+
+body#experiments #details ul {
+    list-style-type: square;
+    padding-left: 1em;
+}
+
+body#experiments #details code {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    border: 1px #666 solid;
+    padding: 0.3em;
+}
+
+body#experiments #details p code,
+body#experiments #details code.inline {
+    display: inline;
+    width: auto;
+    overflow: auto;
+    border: none;
+    padding: 0.3em;
+}
+
+body#about img#badge {
+    border: none;
+    margin-top: 1em;
+}
+
+body#about #content {
+    width: 340px;
+    padding-left: 160px;
+    background: url(./images/redux_many_faces.png) no-repeat top left;
+}
+
+body#about #content ul#projectlist li {
+    margin-bottom: 0.1em;
+    border-bottom: 1px #f5f5f5 solid;
+    padding-bottom: 0.1em;
+    padding-left: 13px;
+    background: url(../images/icons/external.png) no-repeat center left;
+}
+
+body#about #content ul#projectlist a:visited {
+    color: #000;
+    background: #eee;
+}
+
+body#about #content ul#projectlist a {
+    display: block;
+    text-decoration: none;
+}
+
+body#about #content h2 {
+    margin-top: 2em;
+}
+
+body#about address {
+    font-style: normal;
+}
+
+body#about #hcard {
+    min-height: 13em;
+    margin: 0;
+    padding: 0;
+}
+
+body#about #hcard ul {
+    list-style: none;
+}
+
+body#about #linkedin {
+    clear: left;
+    padding-top: 2em;
+}
+
+body#about #content img {
+    border: none;
+}
+
+body#about p.announcement {
+    clear: both;
+    margin-top: 1em;
+}
+
+body#feeds #content li {
+    padding-left: 15px;
+    background-image: url(../images/icons/atom.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+body#feeds #content li a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+}
+
+body#projects #content ul,
+body#about #content ul,
+body#feeds #content ul,
+body#delicious #content ul,
+body#wishlist #content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2em 0;
+}
+
+body#about #content li,
+body#feeds #content li,
+body#delicious #content li,
+body#wishlist #content li {
+    margin: 0;
+}
+
+body#projects #categories li {
+    padding-left: 20px;
+    background: url(../images/icons/folder.png) no-repeat center left;
+    margin: 0;
+}
+
+body#projects #categories a {
+    text-decoration: none;
+}
+
+body#projects #thumbnails li {
+    display: inline;
+}
+
+body#projects #thumbnails li a,
+body#projects #thumbnails li a:link,
+body#projects #thumbnails li a:visited {
+    border-bottom: 5px #fff solid;
+}
+
+body#projects #thumbnails li a:focus,
+body#projects #thumbnails li a:hover,
+body#projects #thumbnails li a:active {
+    border-bottom: 5px #666 solid;
+}
+
+body#projects #details h2,
+body#projects #details dl dt {
+    float: left;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 0.3em;
+    clear: left;
+}
+
+body#projects #details p,
+body#projects #details dl dd {
+    margin: 0 0 0.5em 10em;
+}
+
+#content dl.newspostbit {
+    color: #666;
+    font-size: 0.85em;
+}
+
+#content dl.newspostbit dt {
+    font-weight: bold;
+    display: inline;
+}
+
+#content dl.newspostbit dd {
+    margin: 0;
+    display: inline;
+}
+
+#twitter {
+    background: #eeeeff url('/images/twitter.png') no-repeat 97% 97%;
+    margin: 0 0 1em 0;
+    padding: 0.5em;
+    border: 1px #bbb solid;
+}
+
+#twitter a {
+    text-decoration: none;
+}
+
+#twitter #user img {
+    float: left;
+    margin-right: 5px;
+    border: 1px #bbb solid;
+}
+
+#twitter cite {
+    font-style: normal;
+    font-size: 0.8em;
+    padding-left: 30px;
+}
+
+#twitter blockquote {
+    margin: 0;
+    padding: 0 0 0 30px;
+}
+
+#twitter p {
+    margin: 0;
+    padding: 0;
+}
+
+#twitter blockquote p {
+    padding: 0.5em 0;
+}
+
+#twitter blockquote a,
+#twitter blockquote a:link,
+#twitter blockquote a:visited {
+    color: #f00;
+}
+
+#twitter blockquote a:focus,
+#twitter blockquote a:hover,
+#twitter blockquote a:active {
+    color: #fff;
+    background-color: #f00;
+}
+
+#twitter #user a,
+#twitter #source a {
+    color: #aaa;
+}
+
+* {
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+}
