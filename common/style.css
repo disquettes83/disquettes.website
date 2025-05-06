@@ -160,6 +160,21 @@ ul {
     margin-bottom: 5px;
 }
 
+/* Updated header styles */
+header h2 {
+    font-size: 1.2em;
+    font-weight: normal;
+    margin: 0 0 10px 0;
+    padding: 0;
+    text-align: right;
+}
+
+header hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 0 0 20px 0;
+}
+
 nav {
     background: url(../images/layout/20.png) no-repeat top left;
     padding: 5px 20px 0 20px;
@@ -260,10 +275,11 @@ footer dt {
 
 /* Navigation highlighting styles */
 body#home nav a#navhome,
+body#collaborate nav a#navcollaborate,
+body#about nav a#navabout,
 body#news nav a#navnews,
 body#projects nav a#navprojects,
 body#experiments nav a#navexperiments,
-body#about nav a#navabout,
 body#feeds nav a#navfeeds,
 body#bookmarks nav a#navbookmarks,
 body#externals nav a#navexternals,
@@ -467,25 +483,51 @@ body#about img#badge {
 }
 
 body#about #content {
-    width: 340px;
-    padding-left: 160px;
-    background: url(./images/redux_many_faces.png) no-repeat top left;
+    width: 100%;
+    padding-left: 0;
+    background: none;
 }
 
-body#about #content ul#projectlist li {
-    margin-bottom: 0.1em;
-    border-bottom: 1px #f5f5f5 solid;
-    padding-bottom: 0.1em;
-    padding-left: 13px;
-    background: url(../images/icons/external.png) no-repeat center left;
+body#about #content h2 {
+    margin-top: 1.5em;
+    font-size: 1.2em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3em;
 }
 
-body#about #content ul#projectlist a:visited {
+body#about #content h3 {
+    font-size: 1em;
+    margin: 1em 0 0.3em 0;
+}
+
+body#about #content ul {
+    list-style: disc;
+    margin-left: 1.5em;
+    padding: 0;
+}
+
+body#about #content ul li {
+    margin-bottom: 0.5em;
+}
+
+body#about #projectlist {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+}
+
+body#about #projectlist li {
+    margin-bottom: 0.3em;
+    padding-left: 15px;
+    background: url(../images/icons/external.png) no-repeat left center;
+}
+
+body#about #projectlist a:visited {
     color: #000;
     background: #eee;
 }
 
-body#about #content ul#projectlist a {
+body#about #projectlist a {
     display: block;
     text-decoration: none;
 }
@@ -499,13 +541,23 @@ body#about address {
 }
 
 body#about #hcard {
+    background: #f5f5f5;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 3px;
     min-height: 13em;
-    margin: 0;
-    padding: 0;
 }
 
 body#about #hcard ul {
     list-style: none;
+    margin-left: 0;
+    padding: 0;
+}
+
+body#about #hcard ul li {
+    margin-bottom: 0.3em;
+    padding-left: 15px;
+    background: url(../images/icons/external.png) no-repeat left center;
 }
 
 body#about #linkedin {
@@ -520,6 +572,35 @@ body#about #content img {
 body#about p.announcement {
     clear: both;
     margin-top: 1em;
+}
+
+/* Page-specific styles - Collaborate */
+body#collaborate #content h2 {
+    margin-top: 1.5em;
+    font-size: 1.2em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3em;
+}
+
+body#collaborate #content h3 {
+    font-size: 1em;
+    margin: 1em 0 0.3em 0;
+}
+
+body#collaborate #content ul {
+    list-style: disc;
+    margin-left: 1.5em;
+}
+
+body#collaborate #content ul li {
+    margin-bottom: 0.5em;
+}
+
+body#collaborate .testimonial {
+    background-color: #f5f5f5;
+    padding: 1em;
+    border-left: 3px solid #ddd;
+    margin: 1.5em 0;
 }
 
 /* Page-specific styles - Feeds */
@@ -675,6 +756,18 @@ img {
     image-rendering: crisp-edges;
 }
 
+/* Helper classes */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
 /* Media queries for responsive design */
 @media (max-width: 800px) {
     #container {
@@ -691,14 +784,8 @@ img {
         padding: 20px 0;
     }
     
-    #logo {
-        padding: 0 0 15px 0;
+    header h2 {
         text-align: center;
-        background-position: bottom center;
-    }
-    
-    #logo img {
-        margin: 0 auto;
     }
     
     nav {
@@ -719,10 +806,18 @@ img {
         padding: 20px 0;
     }
     
-    body#about #content {
+    body#about #content,
+    body#collaborate #content {
         width: 100%;
-        padding: 160px 0 0 0;
-        background-position: top center;
+        padding: 20px 0;
+    }
+    
+    body#about #hcard {
+        padding: 0.8em;
+    }
+    
+    body#collaborate .testimonial {
+        padding: 0.8em;
     }
 }
 
