@@ -21,18 +21,55 @@
     <script src="./common/mootools.js" defer></script>
     <script src="./common/slimbox.js" defer></script>
     <link rel="stylesheet" href="./common/slimbox.css" media="screen" />
+    <style>
+        /* MP3 Player Styles */
+        #audio-player-container {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        #audio-player-container h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        #now-playing {
+            margin-bottom: 10px;
+            font-style: italic;
+            color: #666;
+        }
+        #audio-player {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+            font-size: 0.8em;
+            transition: background 0.3s;
+        }
+        .download-btn:hover {
+            background: #666;
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body id="home">
     <div id="container">
         <div id="siteframework">
             <header>
-                <h2>disquette•s</h2>
-            <!--
-                <a href="/" id="logo">
-                    <img src="./images/disquettes.png" alt="disquette•s" width="146" height="15" />
-                </a>
-            -->
+                <h2 class="title">
+                  <span class="name">disquette•s</span>
+                  <span class="sub">webspace</span>
+                </h2>
+                <hr class="header-divider">
             </header>
             <nav aria-label="Main navigation">
                 <dl>
@@ -41,7 +78,6 @@
                     <dd><a href="/collaborate.html" id="navcollaborate">collaborate</a></dd>
                     <dd><a href="/about.html" id="navabout">about</a></dd>
                 </dl>
-
             </nav>
             <aside id="badges">
                 <ul>
@@ -66,7 +102,6 @@
             <section id="experiments">
                 <h1>file explorer</h1>
                 <table class="list">
-
                     <thead>
                         <tr>
                             <th scope="col">experiment</th>
@@ -75,23 +110,71 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="item"><a href="/experiments/1449/">disquettes - Oppalla.mp3</a></td>
+                            <td class="item"><a href="#" class="track-link" data-track="/music/Oppalla.mp3" data-track-name="disquettes - Oppalla.mp3">disquettes - Oppalla.mp3</a></td>
                             <td class="date">20/09/2024</td>
                         </tr>
                         <tr>
-                            <td class="item"><a href="/experiments/1448/">disquettes - Mech Bio Gen.mp3</a></td>
+                            <td class="item"><a href="#" class="track-link" data-track="/music/MechBioGen.mp3" data-track-name="disquettes - Mech Bio Gen.mp3">disquettes - Mech Bio Gen.mp3</a></td>
                             <td class="date">16/09/2024</td>
                         </tr>
-                        
                     </tbody>
                 </table>
+                
+                <!-- MP3 Player -->
+                <div id="audio-player-container">
+                    <h3>MP3 Player</h3>
+                    <div id="now-playing">Select a track to play</div>
+                    <audio id="audio-player" controls>
+                        Your browser does not support the audio element.
+                    </audio>
+                    <a id="download-link" class="download-btn" href="#" download style="display: none;">Download Track</a>
+                </div>
             </section>
+            
             <footer>
                 <p>design by <a href="mailto:redux@splintered.co.uk">redux</a> & <a
                         href="mailto:disquettesmusic@gmail.com">disquette•s</a></p>
             </footer>
         </main>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioPlayer = document.getElementById('audio-player');
+            const nowPlaying = document.getElementById('now-playing');
+            const downloadLink = document.getElementById('download-link');
+            const trackLinks = document.querySelectorAll('.track-link');
+            
+            // Add click event to each track
+            trackLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get track info from data attributes
+                    const trackPath = this.getAttribute('data-track');
+                    const trackName = this.getAttribute('data-track-name');
+                    
+                    // Update audio player
+                    audioPlayer.src = trackPath;
+                    audioPlayer.play();
+                    
+                    // Update now playing text
+                    nowPlaying.textContent = 'Now playing: ' + trackName;
+                    
+                    // Update download link
+                    downloadLink.href = trackPath;
+                    downloadLink.setAttribute('download', trackName);
+                    downloadLink.style.display = 'inline-block';
+                    
+                    // Highlight selected track
+                    trackLinks.forEach(link => {
+                        link.parentElement.classList.remove('playing');
+                    });
+                    this.parentElement.classList.add('playing');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

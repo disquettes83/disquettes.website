@@ -824,3 +824,45 @@ img {
 .badge {
     margin-top: 10px;
 }
+
+
+
+/* The main name has a subtle highlight */
+header .title .name {
+    color: #333;
+    display: block;
+
+  }
+  
+  /* The "webspace" part is styled differently */
+  header .title .sub {
+    color: #666;
+    font-size: 0.9rem;
+    display: block;
+
+  }
+  
+  /* Optional subtle animation for a blinking cursor effect */
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  header .title::after {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 14px;
+    background: #333;
+    margin-left: 4px;
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+  }
+  
+  /* Add a subtle horizontal line */
+  hr.header-divider {
+    border: none;
+    height: 0px;
+    background: #ddd;
+    margin: 0.8rem 0 1.5rem 0;
+  }
