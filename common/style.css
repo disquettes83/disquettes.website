@@ -1,4 +1,4 @@
-
+/* Modern reset and element display */
 header,
 section,
 article,
@@ -9,15 +9,19 @@ footer {
     display: block;
 }
 
-/* general styles */
+/* General styles */
 html {
     width: 100%;
     height: 100%;
     background: #f8f9fa;
     margin: 0;
     padding: 0;
-    font-size: 100%;
-    /* IE trick */
+    font-size: 16px; /* More standard base font size */
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 body {
@@ -27,10 +31,11 @@ body {
     margin: 0;
     padding: 0;
     color: #000;
-    font: 0.7em/1.3em Verdana, Helvetica, sans-serif;
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 0.875em;
+    line-height: 1.5;
 }
 
-/* body#projects, body#experiments { background: #fafaf8 url(/images/layout/bg-mono.png) no-repeat top left; } */
 h1,
 h2,
 h3,
@@ -41,7 +46,6 @@ h6 {
     padding: 0;
     font-size: 100%;
 }
-
 
 blockquote {
     margin: 0.2em;
@@ -66,10 +70,12 @@ code.inline {
     padding: 0.5em;
 }
 
+/* Link styles */
 a,
 a:link {
     color: #333;
-    transition: transform 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
 }
 
 a:visited {
@@ -81,6 +87,7 @@ a:hover,
 a:active {
     color: #fff;
     background-color: #666;
+    outline: none; /* Better to use a visible focus style for accessibility */
 }
 
 a.license:hover {
@@ -96,6 +103,7 @@ a img {
     border: none;
 }
 
+/* List styles */
 ul {
     list-style: none;
     padding: 0;
@@ -112,11 +120,10 @@ ul {
     margin: 0 0 1em 0;
 }
 
-/* general page elements */
+/* Page layout */
 #container {
-    /* background: url(/images/layout/bg.png) no-repeat top left; */
     width: 780px;
-    height: 100%;
+    min-height: 100%;
     position: relative;
     margin: 0 auto;
     padding: 0;
@@ -142,12 +149,15 @@ ul {
     margin: 0;
     padding: 0 20px 15px 0;
     background: url(../images/layout/10.png) no-repeat bottom left;
-    line-height: 1px;
+    line-height: 1.2;
+    text-decoration: none;
 }
 
 #logo img {
     margin: 0;
     padding: 0;
+    display: block;
+    margin-bottom: 5px;
 }
 
 nav {
@@ -172,9 +182,9 @@ nav dd {
 nav a {
     display: block;
     width: 100%;
-    text-decoration: none;
 }
 
+/* Badge styles */
 #badges {
     margin: 0;
     padding: 15px 20px 0 0;
@@ -196,171 +206,7 @@ nav a {
     vertical-align: middle;
 }
 
-#badge_wasp {
-    display: block;
-    width: 100px;
-    height: 15px;
-    float: right;
-    padding: 0 0 3px 0;
-    background: url(./images/badges/webstandards.org-mono.png) no-repeat top right;
-    margin: 0 0 2px 0;
-}
-
-#badge_wasp img {
-    margin: 0;
-    padding: 0;
-    visibility: visible;
-}
-
-#badge_wasp:link img,
-#badge_wasp:visited img {
-    visibility: hidden;
-}
-
-#badge_wasp:focus,
-#badge_wasp:hover,
-#badge_wasp:active {
-    background: url(./images/badges/webstandards.org.png) no-repeat top right;
-}
-
-#badge_wasp:focus img,
-#badge_wasp:hover img,
-#badge_wasp:active img {
-    visibility: visible;
-}
-
-#badge_britpack {
-    display: block;
-    width: 100px;
-    height: 30px;
-    float: right;
-    padding: 0;
-    background: url(./images/badges/britpack-mono.png) no-repeat top left;
-    margin: 0 0 4px 0;
-}
-
-#badge_britpack img {
-    margin: 0;
-    padding: 0;
-    visibility: visible;
-}
-
-#badge_britpack:link img,
-#badge_britpack:visited img {
-    visibility: hidden;
-}
-
-#badge_britpack:focus,
-#badge_britpack:hover,
-#badge_britpack:active {
-    background: url(./images/badges/britpack.png) no-repeat top left;
-}
-
-#badge_britpack:focus img,
-#badge_britpack:hover img,
-#badge_britpack:active img {
-    visibility: visible;
-}
-
-#badge_web_accessibility_book {
-    display: block;
-    width: 100px;
-    height: 122px;
-    float: right;
-    padding: 0;
-    background: url(./images/badges/web_accessibility_book-mono.png) no-repeat top left;
-    margin: 0 0 4px 0;
-}
-
-#badge_web_accessibility_book img {
-    margin: 0;
-    padding: 0;
-    visibility: visible;
-}
-
-#badge_web_accessibility_book:link img,
-#badge_web_accessibility_book:visited img {
-    visibility: hidden;
-}
-
-#badge_web_accessibility_book:focus,
-#badge_web_accessibility_book:hover,
-#badge_web_accessibility_book:active {
-    background: url(./images/badges/web_accessibility_book.png) no-repeat top left;
-}
-
-#badge_web_accessibility_book:focus img,
-#badge_web_accessibility_book:hover img,
-#badge_web_accessibility_book:active img {
-    visibility: visible;
-}
-
-#badge_sxsw {
-    display: block;
-    width: 100px;
-    height: 100px;
-    float: right;
-    padding: 0;
-    background: url(./images/badges/sxsw2007-mono.png) no-repeat top left;
-    margin: 0 0 4px 0;
-}
-
-#badge_sxsw img {
-    margin: 0;
-    padding: 0;
-    visibility: visible;
-}
-
-#badge_sxsw:link img,
-#badge_sxsw:visited img {
-    visibility: hidden;
-}
-
-#badge_sxsw:focus,
-#badge_sxsw:hover,
-#badge_sxsw:active {
-    background: url(./images/badges/sxsw2007.png) no-repeat top left;
-}
-
-#badge_sxsw:focus img,
-#badge_sxsw:hover img,
-#badge_sxsw:active img {
-    visibility: visible;
-}
-
-#badge_nsdesign {
-    display: block;
-    width: 100px;
-    height: 30px;
-    float: right;
-    padding: 0;
-    background: url(./images/badges/nsdesign-mono.png) no-repeat top left;
-    margin: 0 0 4px 0;
-}
-
-#badge_nsdesign img {
-    margin: 0;
-    padding: 0;
-    visibility: visible;
-}
-
-#badge_nsdesign:link img,
-#badge_nsdesign:visited img {
-    visibility: hidden;
-}
-
-#badge_nsdesign:focus,
-#badge_nsdesign:hover,
-#badge_nsdesign:active {
-    background: url(./images/badges/nsdesign.png) no-repeat top left;
-}
-
-#badge_nsdesign:focus img,
-#badge_nsdesign:hover img,
-#badge_nsdesign:active img {
-    visibility: visible;
-}
-
+/* Content styles */
 #content {
     position: absolute;
     top: 110px;
@@ -378,8 +224,11 @@ nav a {
 
 #content img {
     border: 1px #000 solid;
+    max-width: 100%;
+    height: auto;
 }
 
+/* Footer styles */
 footer {
     margin: 3em 0 0 0;
     font-size: 85%;
@@ -409,7 +258,7 @@ footer dt {
     margin-right: 0.25em;
 }
 
-/* now some navigation highlighting styles */
+/* Navigation highlighting styles */
 body#home nav a#navhome,
 body#news nav a#navnews,
 body#projects nav a#navprojects,
@@ -423,8 +272,7 @@ body#delicious nav a#navdelicious {
     color: #fff;
 }
 
-/* and some very specific styles, but they're used in more than one place... */
-/* using the longhand way for the background, so as not to override any previous background colour definitions */
+/* Icon-based styles */
 .view {
     padding-left: 13px;
     background-image: url(../images/icons/arrow.png);
@@ -436,8 +284,6 @@ body#delicious nav a#navdelicious {
 .view:hover,
 .view:active {
     background-image: url(../images/icons/arrow_on.png);
-    background-repeat: no-repeat;
-    background-position: left center;
 }
 
 .back {
@@ -451,8 +297,6 @@ body#delicious nav a#navdelicious {
 .back:hover,
 .back:active {
     background-image: url(../images/icons/back_on.png);
-    background-repeat: no-repeat;
-    background-position: left center;
 }
 
 .category {
@@ -478,6 +322,7 @@ a.external {
     background-position: center left;
 }
 
+/* Testimonial and quote styles */
 .testimonial {
     background: url(../images/icons/quote.png) no-repeat top left;
     padding: 0 0 0 17px;
@@ -506,6 +351,7 @@ a.external {
     font-style: normal;
 }
 
+/* Pager styles */
 #pager #prev {
     margin-left: 0.5em;
     padding: 0 0 0 10px;
@@ -522,9 +368,11 @@ a.external {
     background-position: center right;
 }
 
+/* List table styles */
 table.list {
     width: 100%;
     margin-bottom: 2em;
+    border-collapse: collapse;
 }
 
 table.list td.item {
@@ -537,6 +385,7 @@ table.list td.item {
 table.list tr a {
     display: block;
     text-decoration: none;
+    padding: 0.3em 0;
 }
 
 table.list tr a:visited {
@@ -546,15 +395,16 @@ table.list tr a:visited {
 
 table.list thead tr {
     position: absolute;
-    top: 1em;
-    left: -999em;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
 }
 
 table.list td,
 table.list tr {
     padding: 0;
     margin: 0;
-    border-collapse: collapse;
     border-bottom: 1px #f5f5f5 solid;
     vertical-align: top;
 }
@@ -564,7 +414,7 @@ table.list td.date {
     color: #777;
 }
 
-/* page-specific styles */
+/* Page-specific styles - Experiments */
 body#experiments #content img {
     float: left;
 }
@@ -610,6 +460,7 @@ body#experiments #details code.inline {
     padding: 0.3em;
 }
 
+/* Page-specific styles - About */
 body#about img#badge {
     border: none;
     margin-top: 1em;
@@ -671,6 +522,7 @@ body#about p.announcement {
     margin-top: 1em;
 }
 
+/* Page-specific styles - Feeds */
 body#feeds #content li {
     padding-left: 15px;
     background-image: url(../images/icons/atom.png);
@@ -684,6 +536,7 @@ body#feeds #content li a {
     text-decoration: none;
 }
 
+/* Common styles for several page types */
 body#projects #content ul,
 body#about #content ul,
 body#feeds #content ul,
@@ -701,6 +554,7 @@ body#wishlist #content li {
     margin: 0;
 }
 
+/* Projects page styles */
 body#projects #categories li {
     padding-left: 20px;
     background: url(../images/icons/folder.png) no-repeat center left;
@@ -712,13 +566,15 @@ body#projects #categories a {
 }
 
 body#projects #thumbnails li {
-    display: inline;
+    display: inline-block;
+    margin: 0 5px 5px 0;
 }
 
 body#projects #thumbnails li a,
 body#projects #thumbnails li a:link,
 body#projects #thumbnails li a:visited {
     border-bottom: 5px #fff solid;
+    display: block;
 }
 
 body#projects #thumbnails li a:focus,
@@ -741,6 +597,7 @@ body#projects #details dl dd {
     margin: 0 0 0.5em 10em;
 }
 
+/* News post styles */
 #content dl.newspostbit {
     color: #666;
     font-size: 0.85em;
@@ -756,6 +613,7 @@ body#projects #details dl dd {
     display: inline;
 }
 
+/* Twitter widget styles */
 #twitter {
     background: #eeeeff url('/images/twitter.png') no-repeat 97% 97%;
     margin: 0 0 1em 0;
@@ -811,9 +669,63 @@ body#projects #details dl dd {
     color: #aaa;
 }
 
-* {
-    -ms-interpolation-mode: nearest-neighbor;
-    image-rendering: -moz-crisp-edges;
+/* Image rendering properties for pixel-perfect display */
+img {
     image-rendering: -webkit-optimize-contrast;
-    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 800px) {
+    #container {
+        width: 100%;
+        padding: 0 10px;
+    }
+    
+    #siteframework {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
+    
+    #logo {
+        padding: 0 0 15px 0;
+        text-align: center;
+        background-position: bottom center;
+    }
+    
+    #logo img {
+        margin: 0 auto;
+    }
+    
+    nav {
+        margin: 20px 0 0 0;
+        background-position: top center;
+    }
+    
+    #badges {
+        text-align: center;
+        background-position: top center;
+    }
+    
+    #content {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+    }
+    
+    body#about #content {
+        width: 100%;
+        padding: 160px 0 0 0;
+        background-position: top center;
+    }
+}
+
+.badge {
+    margin-top: 10px;
 }
