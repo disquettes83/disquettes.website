@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>music • disquette•s</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="disquette•s" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./common/style.css" />
+    <link rel="canonical" href="/music/" />
+    <link rel="author" title="music the author" href="/music/" />
+    <link rel="alternate" type="application/atom+xml" href="/feeds/news.xml" title="news feed" />
+    <link rel="alternate" type="application/atom+xml" href="/feeds/projects.xml" title="projects feed" />
+    <link rel="alternate" type="application/atom+xml" href="/feeds/experiments.xml" title="experiments feed" />
+    <meta name="description" content="music disquette•s - Luigi, a professional music producer specializing in Retrowave, Synthwave, and 80s-inspired electronic music" />
+    <meta name="keywords" content="disquette•s, Luigi, electronic music, retrowave, synthwave, dreamwave, synth-pop, italo-disco, music producer" />
+    <meta name="theme-color" content="#ff0000" />
+    <link rel="icon" sizes="16x16" href="/images/favicon.png" type="image/png" />
+    <link rel="icon" sizes="128x128" href="/images/favicon128x128.png" />
+    <link rel="apple-touch-icon" href="/images/favicon128x128.png" />
+    <script src="./common/mootools.js" defer></script>
+    <script src="./common/slimbox.js" defer></script>
+    <link rel="stylesheet" href="./common/slimbox.css" media="screen" />
+</head>
+
+<body id="music">
+    <div id="container">
+        <div id="siteframework">
+            <header>
+                <h2 class="title">
+                  <span class="name">disquette•s</span>
+                  <span class="sub">web•space</span>
+                </h2>
+                <hr class="header-divider">
+            </header>
+            <nav aria-label="Main navigation">
+                <dl>
+                    <dt>main sections</dt>
+                    <dd><a href="/" id="navhome">home</a></dd>
+                    <dd><a href="/collaborate.html" id="navcollaborate">collaborate</a></dd>
+                    <dd><a href="/music.html" id="navmusic">music</a></dd>
+                </dl>
+            </nav>
+            <aside id="badges">
+                <ul>
+                    <li>
+                        <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">
+                            <img src="./images/icons/by-nc-sa.eu.png" 
+                                alt="Creative Commons: Attribution Non-Commercial Share-Alike" width="88" height="31">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="badge" href="https://disquette-s.bandcamp.com/" target="_blank" rel="noopener">
+                            <img src="./images/icons/bandcamp_c.png" alt="Bandcamp">
+                        </a>
+                        <a class="badge" href="https://open.spotify.com/intl-it/artist/0l0cLSyeAbCRXY4sxkH9kl" target="_blank" rel="noopener">
+                            <img src="./images/icons/spotify.png" alt="Spotify">
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+        <main id="content">
+            <section id="experiments">
+                <h1>file explorer</h1>
+                <table class="list">
+                    <thead>
+                        <tr>
+                            <th scope="col">title</th>
+                            <th scope="col">date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item"><a href="#" class="track-link" data-track="/music/Oppalla.mp3" data-track-name="disquettes - Oppalla.mp3">disquettes - Oppalla.mp3</a></td>
+                            <td class="date">20/09/2024</td>
+                        </tr>
+                        <tr>
+                            <td class="item"><a href="#" class="track-link" data-track="/music/MechBioGen.mp3" data-track-name="disquettes - Mech Bio Gen.mp3">disquettes - Mech Bio Gen.mp3</a></td>
+                            <td class="date">16/09/2024</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- MP3 Player -->
+                <div id="audio-player-container">
+                    <h3>MP3 Player</h3>
+                    <div id="now-playing">Select a track to play</div>
+                    <audio id="audio-player" controls>
+                        Your browser does not support the audio element.
+                    </audio>
+                    <a id="download-link" class="download-btn" href="#" download style="display: none;">Download Track</a>
+                </div>
+            </section>
+            
+            <footer>
+                <p>design by <a href="mailto:disquettesmusic@gmail.com">disquette•s</a></p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioPlayer = document.getElementById('audio-player');
+            const nowPlaying = document.getElementById('now-playing');
+            const downloadLink = document.getElementById('download-link');
+            const trackLinks = document.querySelectorAll('.track-link');
+            
+            // Add click event to each track
+            trackLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get track info from data attributes
+                    const trackPath = this.getAttribute('data-track');
+                    const trackName = this.getAttribute('data-track-name');
+                    
+                    // Update audio player
+                    audioPlayer.src = trackPath;
+                    audioPlayer.play();
+                    
+                    // Update now playing text
+                    nowPlaying.textContent = 'Now playing: ' + trackName;
+                    
+                    // Update download link
+                    downloadLink.href = trackPath;
+                    downloadLink.setAttribute('download', trackName);
+                    downloadLink.style.display = 'inline-block';
+                    
+                    // Highlight selected track
+                    trackLinks.forEach(link => {
+                        link.parentElement.classList.remove('playing');
+                    });
+                    this.parentElement.classList.add('playing');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

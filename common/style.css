@@ -228,7 +228,8 @@ nav a {
     position: absolute;
     top: 110px;
     left: 280px;
-    width: 500px;
+    width: 100%;  /* Cambiato da 500px a 100% */
+    max-width: 700px;  /* Aggiunto un max-width per evitare righe troppo lunghe */
     margin: 0;
     padding: 0;
     line-height: 1.5;
@@ -278,14 +279,7 @@ footer dt {
 /* Navigation highlighting styles */
 body#home nav a#navhome,
 body#collaborate nav a#navcollaborate,
-body#about nav a#navabout,
-body#news nav a#navnews,
-body#projects nav a#navprojects,
-body#experiments nav a#navexperiments,
-body#feeds nav a#navfeeds,
-body#bookmarks nav a#navbookmarks,
-body#externals nav a#navexternals,
-body#delicious nav a#navdelicious {
+body#music nav a#navmusic {
     background: #000;
     color: #fff;
 }
@@ -478,71 +472,71 @@ body#experiments #details code.inline {
     padding: 0.3em;
 }
 
-/* Page-specific styles - About */
-body#about img#badge {
+/* Page-specific styles - music */
+body#music img#badge {
     border: none;
     margin-top: 1em;
 }
 
-body#about #content {
+body#music #content {
     width: 100%;
     padding-left: 0;
     background: none;
 }
 
-body#about #content h2 {
+body#music #content h2 {
     margin-top: 1.5em;
     font-size: 1.2em;
     border-bottom: 1px solid #eee;
     padding-bottom: 0.3em;
 }
 
-body#about #content h3 {
+body#music #content h3 {
     font-size: 1em;
     margin: 1em 0 0.3em 0;
 }
 
-body#about #content ul {
+body#music #content ul {
     list-style: disc;
     margin-left: 1.5em;
     padding: 0;
 }
 
-body#about #content ul li {
+body#music #content ul li {
     margin-bottom: 0.5em;
 }
 
-body#about #projectlist {
+body#music #projectlist {
     list-style: none;
     margin-left: 0;
     padding: 0;
 }
 
-body#about #projectlist li {
+body#music #projectlist li {
     margin-bottom: 0.3em;
     padding-left: 15px;
     background: url(../images/icons/external.png) no-repeat left center;
 }
 
-body#about #projectlist a:visited {
+body#music #projectlist a:visited {
     color: #000;
     background: #eee;
 }
 
-body#about #projectlist a {
+body#music #projectlist a {
     display: block;
     text-decoration: none;
 }
 
-body#about #content h2 {
+body#music #content h2 {
     margin-top: 2em;
 }
 
-body#about address {
+body#music address {
     font-style: normal;
 }
 
-body#about #hcard {
+body#music #hcard {
     background: #f5f5f5;
     padding: 1em;
     margin: 1em 0;
@@ -550,28 +544,28 @@ body#about #hcard {
     min-height: 13em;
 }
 
-body#about #hcard ul {
+body#music #hcard ul {
     list-style: none;
     margin-left: 0;
     padding: 0;
 }
 
-body#about #hcard ul li {
+body#music #hcard ul li {
     margin-bottom: 0.3em;
     padding-left: 15px;
     background: url(../images/icons/external.png) no-repeat left center;
 }
 
-body#about #linkedin {
+body#music #linkedin {
     clear: left;
     padding-top: 2em;
 }
 
-body#about #content img {
+body#music #content img {
     border: none;
 }
 
-body#about p.announcement {
+body#music p.announcement {
     clear: both;
     margin-top: 1em;
 }
@@ -621,7 +615,7 @@ body#feeds #content li a {
 
 /* Common styles for several page types */
 body#projects #content ul,
-body#about #content ul,
+body#music #content ul,
 body#feeds #content ul,
 body#delicious #content ul,
 body#wishlist #content ul {
@@ -630,7 +624,7 @@ body#wishlist #content ul {
     margin: 0 0 2em 0;
 }
 
-body#about #content li,
+body#music #content li,
 body#feeds #content li,
 body#delicious #content li,
 body#wishlist #content li {
@@ -800,21 +794,20 @@ img {
         background-position: top center;
     }
     
-    #content {
+    #content,
+    body#music #content,
+    body#collaborate #content,
+    body#home #content {
         position: relative;
         top: 0;
         left: 0;
         width: 100%;
-        padding: 20px 0;
+        max-width: 100%;
+        padding: 20px 10px;
     }
+
     
-    body#about #content,
-    body#collaborate #content {
-        width: 100%;
-        padding: 20px 0;
-    }
-    
-    body#about #hcard {
+    body#music #hcard {
         padding: 0.8em;
     }
     
@@ -870,13 +863,13 @@ header .title .name {
   }
 
   /* MP3 Player Styles */
-  #audio-player-container {
+  body#music #audio-player-container {
     margin-top: 20px;
     padding: 15px;
     background: #f5f5f5;
     border: 1px solid #ddd;
     border-radius: 4px;
-    }
+}
 #audio-player-container h3 {
     margin-top: 0;
     margin-bottom: 10px;
@@ -919,7 +912,7 @@ outline: none; /* Remove default focus outline */
 box-shadow: 0 0 0 2px rgba(51, 51, 51, 0.3); /* Add subtle focus indication */
 }
 
-.about-header {
+body#home .music-header {
     display: flex;
     align-items: flex-start;
     margin-bottom: 20px;
@@ -932,17 +925,17 @@ box-shadow: 0 0 0 2px rgba(51, 51, 51, 0.3); /* Add subtle focus indication */
     border: 1px solid #ddd;
 }
 
-.about-text {
+.music-text {
     flex: 1;
 }
 
-.about-text h1 {
+.music-text h1 {
     margin-top: 0;
 }
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 600px) {
-    .about-header {
+    .music-header {
         flex-direction: column;
     }
     
@@ -985,8 +978,8 @@ box-shadow: 0 0 0 2px rgba(51, 51, 51, 0.3); /* Add subtle focus indication */
 }
 
 .discography-table .cover img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
     border: 1px solid #ddd;
 }
@@ -1000,4 +993,15 @@ box-shadow: 0 0 0 2px rgba(51, 51, 51, 0.3); /* Add subtle focus indication */
 
 .discography-table .year {
     font-size: 0.9em;
+}
+
+body#home #music-info h2 {
+    margin-top: 1.5em;
+    font-size: 1.2em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3em;
+}
+
+p, li {
+    max-width: 650px; /* Limita la larghezza delle linee di testo per migliore leggibilità */
 }
