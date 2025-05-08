@@ -50,7 +50,7 @@ h6 {
 blockquote {
     margin: 0.2em;
     padding: 0 0.2em 0.2em 20px;
-    background: url(../images/icons/quote.png) no-repeat top left;
+    /* background: url(../images/icons/quote.png) no-repeat top left; */
 }
 
 code {
@@ -336,7 +336,7 @@ a.external {
 
 /* Testimonial and quote styles */
 .testimonial {
-    background: url(../images/icons/quote.png) no-repeat top left;
+    /* background: url(../images/icons/quote.png) no-repeat top left; */
     padding: 0 0 0 17px;
     margin: 1em 0;
 }
@@ -536,7 +536,7 @@ body#music address {
     font-style: normal;
 }
 
-body#music #hcard {
+#hcard {
     background: #f5f5f5;
     padding: 1em;
     margin: 1em 0;
@@ -544,28 +544,28 @@ body#music #hcard {
     min-height: 13em;
 }
 
-body#music #hcard ul {
+#hcard ul {
     list-style: none;
     margin-left: 0;
     padding: 0;
 }
 
-body#music #hcard ul li {
+#hcard ul li {
     margin-bottom: 0.3em;
     padding-left: 15px;
     background: url(../images/icons/external.png) no-repeat left center;
 }
 
-body#music #linkedin {
+#linkedin {
     clear: left;
     padding-top: 2em;
 }
 
-body#music #content img {
+#content img {
     border: none;
 }
 
-body#music p.announcement {
+p.announcement {
     clear: both;
     margin-top: 1em;
 }
@@ -807,7 +807,7 @@ img {
     }
 
     
-    body#music #hcard {
+    #hcard {
         padding: 0.8em;
     }
     
@@ -1004,4 +1004,41 @@ body#home #music-info h2 {
 
 p, li {
     max-width: 650px; /* Limita la larghezza delle linee di testo per migliore leggibilità */
+}
+
+/* Stili per il pulsante View More/Less */
+.view-toggle-container {
+    margin: 20px 0 30px 0;
+    text-align: center;
+}
+
+.view-toggle-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: Verdana, Helvetica, sans-serif;
+}
+
+.view-toggle-btn:hover {
+    background-color: #555;
+}
+
+.view-toggle-btn:active {
+    transform: scale(0.98);
+}
+
+/* Animazione per mostrare/nascondere recensioni aggiuntive */
+#additional-reviews {
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    max-height: 0;
+}
+
+#additional-reviews.show {
+    max-height: 1500px; /* Valore sufficientemente grande per contenere tutte le recensioni */
 }

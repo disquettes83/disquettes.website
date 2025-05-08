@@ -124,6 +124,68 @@
                     </blockquote>
                     <p class="cite">— <cite>Craig C. on SoundBetter</cite></p>
                 </div>
+
+
+
+
+
+
+
+                <!-- Additional reviews -->
+                <div id="additional-reviews" style="display: none;">
+                    <div class="testimonial">
+                        <blockquote>
+                            <p>I really got more than imagined. He really changed it into something completely different, and absolutely hit that 80ies retro wave style. Highly recommended! 10 out of 10!</p>
+                        </blockquote>
+                        <p class="cite">— <cite>sterilecuckoo from Germany</cite></p>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <blockquote>
+                            <p>He understands your vision and fuse it with his creativity. At some point you trust the process and next thing you know a song is done. Its been a pleasure.</p>
+                        </blockquote>
+                        <p class="cite">— <cite>bannhey from United States</cite></p>
+                    </div>
+
+                    <div class="testimonial">
+                        <blockquote>
+                            <p>Luigi has all the qualities of a premium creative professional - polite, great speed with uncompromising accuracy, extremely timely (he's handed in his work way ahead of delivery deadline multiple times), great listener, accommodating and very talented with his craft. Been a joy working with you, Luigi! Thank you for breathing excitement in to my project. Can't wait to share it with the world.</p>
+                        </blockquote>
+                        <p class="cite">— <cite>dannybunny from Singapore</cite></p>
+                    </div>
+
+                    <div class="testimonial">
+                        <blockquote>
+                            <p>Luigi crafted a perfect 80s style song for our mobile game, capturing the exact vibes we wanted from our references. He was professional, responsive, and patient with us. For anyone seeking authentic 80s music, Luigi is your best choice. Highly recommended for his talent and professionalism.</p>
+                        </blockquote>
+                        <p class="cite">— <cite>digitalgreentea from Switzerland</cite></p>
+                    </div>
+
+
+                    
+                    <div class="testimonial">
+                        <blockquote>
+                            <p>Every stem in his remix is such high quality, so much work goes into his detail!</p>
+                        </blockquote>
+                        <p class="cite">— <cite>white_robot from United States</cite></p>
+                    </div>
+                    
+                </div>
+                
+
+
+                <!-- Pulsante View More/Less -->
+                <div class="view-toggle-container">
+                    <button id="view-toggle" class="view-toggle-btn">View More</button>
+                </div>
+
+
+
+
+
+
+
+
                 
                 <h2>working together</h2>
                
@@ -145,6 +207,30 @@
             </footer>
         </main>
     </div>
+<script>
+    // JavaScript per la funzionalità "View More/Less"
+document.addEventListener('DOMContentLoaded', function() {
+    // Ottieni riferimenti agli elementi
+    const viewToggleBtn = document.getElementById('view-toggle');
+    const additionalReviews = document.getElementById('additional-reviews');
+    
+    // Configura il comportamento iniziale (rimuovi display:none e usa max-height con il CSS)
+    additionalReviews.style.display = '';
+    
+    // Aggiungi event listener per il pulsante
+    viewToggleBtn.addEventListener('click', function() {
+        // Toggle della classe per mostrare/nascondere le recensioni
+        additionalReviews.classList.toggle('show');
+        
+        // Aggiorna il testo del pulsante
+        if (additionalReviews.classList.contains('show')) {
+            viewToggleBtn.textContent = 'View Less';
+        } else {
+            viewToggleBtn.textContent = 'View More';
+        }
+    });
+});
+</script>
 </body>
 
 </html>
